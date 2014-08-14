@@ -1,7 +1,7 @@
 Derby Render
 ============
 
-Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace.
+Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace.  
 It more or less behaves similarly to `app.page.render(namespace)`.
 
 Installation
