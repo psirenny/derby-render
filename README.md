@@ -1,72 +1,36 @@
-Gravitate
-=========
+Derby Render
+============
 
-Yet another node library for [Gravatar](http://en.gravatar.com) with support for both the **photo** and **profile** APIs.
+Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace.
+It more or less behaves similarly to `app.page.render(namespace)`.
 
-[![Build Status](https://travis-ci.org/psirenny/gravitate.png?branch=master)](https://travis-ci.org/psirenny/gravitate)
+Installation
+------------
 
-Hash
-----
+    $ npm install derby-render --save
 
-Although all of the gravitate functions can accept an email, there is still a hash function available for your use.
-If the input has already been hashed then it will just return the value.
+Usage
+-----
 
-```javascript
-var gravitate = require('gravitate');
-var email = 'email@address.com';
-var hash = gravitate.hash(email); // "63b91ca4ec19ad79f320eaf5815d75e9"
-```
+    var derby = require('derby');
+    var app = derby.createApp('app', __filename);
+    var render = require('derby-render')(app);
+    app.loadViews(...);
+    app.proto.foo = ...;
+    app.proto.bar = ...;
 
-Images
-------
+    // output the html loaded by "app.page.render()"
+    var html = render();
 
-```javascript
-var hash = '63b91ca4ec19ad79f320eaf5815d75e9';
-var imageUrl = gravitate.image.url(hash); // "https://secure.gravatar.com/avatar/63b91ca4ec19ad79f320eaf5815d75e9"
-```
+    // use a namespace, such as "app.page.render('page1')"
+    html = render('page1');
 
-All functions also accept an email:
+    // load data in the page
+    html = render('page2', {year: 2015});
 
-```javascript
-var email = 'email@address.com';
-var imageUrl = gravitate.image.url(email); // "https://secure.gravatar.com/avatar/63b91ca4ec19ad79f320eaf5815d75e9"
-```
+Options
+-------
 
-Image and profile urls are secure by default.
-You can toggle SSL by setting the **secure** property in options to *true* or *false*.
+You can configure the render function by passing in an options object in addition to the app:
 
-```javascript
-var email = 'email@address.com';
-var imageUrl = gravitate.image.url(email, {secure: false}); // "http://www.gravatar.com/avatar/63b91ca4ec19ad79f320eaf5815d75e9"
-```
-
-All of the [standard url options](http://en.gravatar.com/site/implement/images/) are also available either through their full or abbreviated name:
-
-```javascript
-var email = 'email@address.com';
-var imageUrl = gravitate.image.url(email, {
-  default: 'monsterid',
-  r: 'pg'
-});
-```
-
-Profiles
---------
-
-Profile urls work the same way as image urls and also accept a **secure** parameter:
-
-```javascript
-var email = 'email@address.com';
-var profileUrl = gravitate.profile.url(email); // "https://secure.gravatar.com/63b91ca4ec19ad79f320eaf5815d75e9.json"
-```
-
-Often times you'll want the actual data and not url.
-You can get the profile data with the following function:
-
-```javascript
-var email = 'email@address.com';
-var profileUrl = gravitate.profile.data(email, function (err, data) {
-  if (err) return;
-  console.log(data.entry[0]); // {hash: '...', photos: [], ...}
-});
-```
+**view** - The default view to use. Defaults to `'Page'`.
