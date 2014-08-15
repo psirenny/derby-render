@@ -1,14 +1,14 @@
 {
   "author": "Dennis Torres <djtorres0@gmail.com>",
   "bugs": {
-    "url": "https://github.com/psirenny/derby-email/issues"
+    "url": "https://github.com/psirenny/derby-render/issues"
   },
   "dependencies": {
     "derby": "^0.6.0-alpha23",
     "derby-templates": "^0.1.8",
     "merge": "^1.1.3"
   },
-  "description": "Render email using derby templates.",
+  "description": "Provides a render function for Derby JS apps.",
   "devDependencies": {
     "chai": "^1.9.1",
     "mocha": "^1.21.4"
@@ -24,14 +24,14 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "name": "derby-email",
+  "name": "derby-render",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psirenny/derby-email.git"
+    "url": "https://github.com/psirenny/derby-render.git"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha test"
   },
-  "version": "0.1.0"
+  "version": "1.0.0"
 }
