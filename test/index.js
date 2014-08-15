@@ -13,19 +13,27 @@ describe('derby-render', function () {
   });
 
   describe('single page app', function () {
-    it('page should return expected html', function () {
+    it('page view should return expected html', function () {
       var render = lib(fixtures.singlePage.app);
       var html = render();
       html.should.be.a('string');
       html.should.eql(fixtures.singlePage.expected.index);
     });
 
-    it('body should return expected html', function () {
+    it('body view should return expected html', function () {
       var opts = {view: 'Body'};
       var render = lib(fixtures.singlePage.app, opts);
       var html = render();
       html.should.be.a('string');
       html.should.eql(fixtures.singlePage.expected.body);
+    });
+
+    it('fake view should return blank', function () {
+      var opts = {view: 'Fake'};
+      var render = lib(fixtures.singlePage.app, opts);
+      var html = render();
+      html.should.be.a('string');
+      html.should.be.blank;
     });
   });
 
