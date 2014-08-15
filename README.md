@@ -22,10 +22,13 @@ Usage
     // output the html loaded by "app.page.render()"
     var html = render();
 
-    // use a namespace, such as "app.page.render('page1')"
-    html = render('page1');
+    // specify a namespace
+    html = render('page2');
 
-    // load data in the page
+    // specify model data
+    html = render({year: 2015});
+
+    // or combine them both
     html = render('page2', {year: 2015});
 
 Options
