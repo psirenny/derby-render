@@ -13,6 +13,9 @@
     "chai": "^1.9.1",
     "mocha": "^1.21.4"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "keywords": [
     "derby",
     "render",
