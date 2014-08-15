@@ -4,6 +4,8 @@ Derby Render
 Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace.  
 It more or less behaves similarly to `app.page.render(namespace)`.
 
+[![Build Status](https://travis-ci.org/psirenny/derby-render.png?branch=master)](https://travis-ci.org/psirenny/derby-render)
+
 Installation
 ------------
 
