@@ -1,4 +1,5 @@
 var merge = require('merge');
+var Model = require('racer/lib/Model');
 var templates = require('derby-templates');
 
 module.exports = function (app, opts) {
@@ -11,7 +12,8 @@ module.exports = function (app, opts) {
     if (!data) data = {};
     var prefix = ns ? (ns + ':') : '';
     var render = {$render: {prefix: prefix}};
-    var model = {data: merge(render, opts.global, data)};
+    var model = new Model();
+    model.data = merge(render, opts.global, data);
     var controller = merge({model: model}, app.proto);
     var ctx = new templates.contexts.Context(meta, controller);
     ctx.meta.views = app.views;
