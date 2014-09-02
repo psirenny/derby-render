@@ -39,4 +39,5 @@ Options
 You can configure the render function by passing in an options object in addition to the app:
 
 **global** – Global data to apply to each render call.  
+
 **view** – Default view to use. Defaults to `'Page'`.
