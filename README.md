@@ -1,8 +1,15 @@
 Derby Render
 ============
 
-Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace.  
-It more or less behaves similarly to `app.page.render(namespace)`.
+Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace, behaving more or less like `app.page.render(namespace)`.
+
+Version 2.0
+-----------
+
+The following changes were made because of changes in derby:
+* Html is now returned asynchronously via a callback function.
+* Context data is no longer supported. You must pass model data with a collection and document Id.
+* **global** and **view** properties are renamed to **data** and **ns** respectively, to reduce confusion.
 
 [![Build Status](https://travis-ci.org/psirenny/derby-render.png?branch=master)](https://travis-ci.org/psirenny/derby-render)
 
@@ -22,22 +29,31 @@ Usage
     app.proto.bar = ...;
 
     // output the html loaded by "app.page.render()"
-    var html = render();
+    render(function (err, html) {
+      ...
+    });
 
     // specify a namespace
-    html = render('page2');
+    render('about', function () {
+      ...  
+    });
 
-    // specify model data
-    html = render({year: 2015});
+    // pass in model data
+    var data = {_page: {year: 2015}};
+    render(data, function (err, html) {
+      ...  
+    });
 
-    // or combine them both
-    html = render('page2', {year: 2015});
+    // or specify a namespace and data
+    render('about', data, function (err, html) {
+      ...  
+    });
 
 Options
 -------
 
 You can configure the render function by passing in an options object in addition to the app:
 
-**global** – Global data to apply to each render call.  
+**data** – Global model data applied to each render call.
 
-**view** – Default view to use. Defaults to `'Page'`.
+**ns** – Default namespace for each render call. Defaults to `'Page'`.
