@@ -3,6 +3,8 @@ Derby Render
 
 Provides a render function for [Derby JS](http://derbyjs.com) apps that returns html for a given namespace, behaving more or less like `app.page.render(namespace)`.
 
+[![Build Status](https://travis-ci.org/psirenny/derby-render.png?branch=master)](https://travis-ci.org/psirenny/derby-render)
+
 Version 2.0
 -----------
 
@@ -11,7 +13,6 @@ The following changes were made because of changes in derby:
 * Context data is no longer supported. You must pass model data with a collection and document Id.
 * **global** and **view** properties are renamed to **data** and **ns** respectively, to reduce confusion.
 
-[![Build Status](https://travis-ci.org/psirenny/derby-render.png?branch=master)](https://travis-ci.org/psirenny/derby-render)
 
 Installation
 ------------
