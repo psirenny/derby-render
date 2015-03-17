@@ -11,9 +11,9 @@ module.exports = function (app, opts) {
     var req = {};
     var res = {send: function (html) {cb(null, html)}};
     var page = app.createPage(req, res);
-    data = _.merge({}, opts.data, data);
+    data = _.merge({}, opts.data, data || {});
     _.each(data, function (docs, coll) {
-      _.each(docs, function (docId, doc) {
+      _.each(docs, function (doc, docId) {
         page.model.set(coll + '.' + docId, doc);
       });
     });
