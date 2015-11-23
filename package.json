@@ -1,5 +1,8 @@
 {
-  "author": "Dennis Torres <djtorres0@gmail.com>",
+  "author": {
+    "name": "Dennis Torres",
+    "email": "djtorres0@gmail.com"
+  },
   "bugs": {
     "url": "https://github.com/psirenny/derby-render/issues"
   },
@@ -9,7 +12,7 @@
   "description": "Provides a render function for Derby JS apps.",
   "devDependencies": {
     "chai": "^1.9.1",
-    "derby": "0.6.0-alpha42",
+    "derby": "0.6.0-alpha61",
     "mocha": "^1.21.4"
   },
   "engines": {
@@ -24,13 +27,36 @@
   "license": "MIT",
   "main": "index.js",
   "name": "derby-render",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psirenny/derby-render.git"
+    "url": "git+https://github.com/psirenny/derby-render.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test"
+    "test": "mocha test"
   },
-  "version": "3.0.0"
+  "version": "3.0.0",
+  "gitHead": "51fea0cc8518f67fbb487367017c76f52788a35f",
+  "homepage": "https://github.com/psirenny/derby-render#readme",
+  "_id": "derby-render@3.0.0",
+  "_shasum": "b160c805c6187b4f6f79673c7d43412695a06533",
+  "_from": "derby-render@3.0.0",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "psirenny",
+    "email": "djtorres0@gmail.com"
+  },
+  "dist": {
+    "shasum": "b160c805c6187b4f6f79673c7d43412695a06533",
+    "tarball": "http://registry.npmjs.org/derby-render/-/derby-render-3.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "psirenny",
+      "email": "djtorres0@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/derby-render/-/derby-render-3.0.0.tgz",
+  "readme": "ERROR: No README data found!"
 }
